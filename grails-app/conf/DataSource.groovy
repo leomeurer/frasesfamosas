@@ -13,8 +13,10 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            //MUUIIITOOO CUIDADO COM O DBCREATE - PREFIRAM USAR O VALIDADE
+            dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+            //http://www.h2database.com/html/main.html
+            url = "jdbc:h2:file:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
         }
     }
     test {
